@@ -137,7 +137,7 @@ export const PortalShell: React.FC<PortalShellProps> = ({
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-xs">
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-white font-bold text-base">
-              <img src="/logo.png" className="w-9 h-9 rounded-full border border-amber-300 object-cover" alt="Logo Footer" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} className="w-9 h-9 rounded-full border border-amber-300 object-cover" alt="Logo Footer" />
               <span>Ca Đoàn Thiên Thần</span>
             </div>
             <p className="text-slate-400 leading-relaxed">

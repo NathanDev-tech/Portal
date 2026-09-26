@@ -33,7 +33,7 @@ export const AdminLoginPage: React.FC<{ onBack: () => void }> = ({ onBack }) => 
       {/* Background archangel image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-archangels.jpg"
+          src={`${import.meta.env.BASE_URL}hero-archangels.jpg`}
           alt=""
           className="w-full h-full object-cover opacity-20 scale-105 blur-sm"
         />

@@ -29,7 +29,7 @@ export const PortalHome: React.FC<PortalHomeProps> = ({ onPageChange }) => {
         {/* BACKGROUND ARTWORK */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-archangels.jpg"
+            src={`${import.meta.env.BASE_URL}hero-archangels.jpg`}
             alt="Các Thánh Tổng Lãnh Thiên Thần - Bổn Mạng Ca Đoàn Thiên Thần"
             className="w-full h-full object-cover object-top sm:object-center opacity-65 filter brightness-105 saturate-110"
           />

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  LayoutDashboard, 
-  Users, 
-  Bell, 
-  Calendar, 
-  BookOpen, 
-  FileText, 
-  UserPlus, 
-  BarChart3, 
-  Settings, 
+import {
+  LayoutDashboard,
+  Users,
+  Bell,
+  Calendar,
+  BookOpen,
+  FileText,
+  UserPlus,
+  BarChart3,
+  Settings,
   ExternalLink,
   Menu,
   X,
@@ -19,7 +19,7 @@ import { SearchInput } from '../common/SearchInput';
 import { ThemeToggleSwitch } from '../common/ThemeToggleSwitch';
 import { useAuth } from '../../context/AuthContext';
 
-export type AdminTab = 
+export type AdminTab =
   | 'dashboard'
   | 'members'
   | 'announcements'
@@ -72,16 +72,16 @@ export const AdminShell: React.FC<AdminShellProps> = ({
   return (
     <div className="min-h-screen bg-[#F8F9FA] dark:bg-[#0B0F19] transition-colors p-3 sm:p-6 text-slate-900 dark:text-slate-100 font-sans">
       <div className="crextio-outer-container max-w-7xl mx-auto min-h-[92vh] flex flex-col overflow-hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
-        
+
         {/* HEADER BAR */}
         <header className="px-6 py-4 border-b border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-4 shrink-0 bg-white/50 dark:bg-slate-900/50">
-          
+
           {/* LOGO & TITLE */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={onOpenPortal}>
-            <img 
-              src="/logo.png" 
-              alt="Logo Tổng Lãnh Thiên Thần" 
-              className="w-11 h-11 rounded-full object-cover shadow-sm hover:scale-105 transition-transform border border-amber-300" 
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="Logo Tổng Lãnh Thiên Thần"
+              className="w-11 h-11 rounded-full object-cover shadow-sm hover:scale-105 transition-transform border border-amber-300"
             />
             <div>
               <div className="flex items-center gap-2">
@@ -156,11 +156,10 @@ export const AdminShell: React.FC<AdminShellProps> = ({
               <button
                 key={item.id}
                 onClick={() => onTabChange(item.id)}
-                className={`flex items-center gap-2 px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-200 shrink-0 ${
-                  isActive
+                className={`flex items-center gap-2 px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-200 shrink-0 ${isActive
                     ? 'bg-[#0B192C] text-white shadow-sm dark:bg-amber-400 dark:text-slate-900 font-semibold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800'
-                }`}
+                  }`}
               >
                 {item.icon}
                 <span>{item.label}</span>
@@ -200,11 +199,10 @@ export const AdminShell: React.FC<AdminShellProps> = ({
               <button
                 key={item.id}
                 onClick={() => { onTabChange(item.id); setIsMobileMenuOpen(false); }}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium ${
-                  currentTab === item.id
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium ${currentTab === item.id
                     ? 'bg-[#0B192C] dark:bg-amber-400 text-white dark:text-slate-900 font-semibold'
                     : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
+                  }`}
               >
                 {item.icon}
                 <span>{item.label}</span>
