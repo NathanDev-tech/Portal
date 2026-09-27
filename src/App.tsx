@@ -24,9 +24,20 @@ import { Loader2 } from 'lucide-react';
 export function App() {
   const { isAuthenticated, isLoading: authLoading, signOut } = useAuth();
 
-  const isAdminRoute = 
-    window.location.search.includes('admin=true') || 
-    window.location.pathname.startsWith('Portal/admin');
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const adminPath = `${basePath}/admin`;
+
+const getIsAdminRoute = () => {
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/';
+
+  return (
+    window.location.search.includes('admin=true') ||
+    pathname === adminPath ||
+    pathname.startsWith(`${adminPath}/`)
+  );
+};
+
+const isAdminRoute = getIsAdminRoute();
 
   const [viewMode, setViewMode] = useState<'admin' | 'portal'>(isAdminRoute ? 'admin' : 'portal');
   const [adminTab, setAdminTab] = useState<AdminTab>('dashboard');
