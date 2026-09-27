@@ -45,10 +45,10 @@ export const PortalShell: React.FC<PortalShellProps> = ({
             className="flex items-center gap-3 cursor-pointer group"
           >
             <img
-              src="/logo.png"
-              alt="Logo Tổng Lãnh Thiên Thần"
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="Logo Ca Đoàn Thiên Thần"
               className="w-11 h-11 rounded-full object-cover border border-amber-300 shadow-sm group-hover:scale-105 transition-transform"
-            />
+              />
             <div>
               <div className="text-base font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 Ca Đoàn Thiên Thần
