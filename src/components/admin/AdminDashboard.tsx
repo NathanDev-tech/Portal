@@ -38,7 +38,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) =>
       {/* ARCHANGEL HERO WELCOME BANNER FOR ADMIN */}
       <div className="relative rounded-3xl overflow-hidden shadow-md border border-amber-200/80 bg-[#0B192C] text-white">
         <img 
-          src="/hero-archangels.jpg" 
+          src={`${import.meta.env.BASE_URL}hero-archangels.jpg`}
           alt="Mừng Kính Tổng Lãnh Thiên Thần" 
           className="w-full h-32 sm:h-40 object-cover opacity-45 mix-blend-luminosity"
         />
