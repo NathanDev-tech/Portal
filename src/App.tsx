@@ -26,7 +26,7 @@ export function App() {
 
   const isAdminRoute = 
     window.location.search.includes('admin=true') || 
-    window.location.pathname.startsWith('/admin');
+    window.location.pathname.startsWith('Portal/admin');
 
   const [viewMode, setViewMode] = useState<'admin' | 'portal'>(isAdminRoute ? 'admin' : 'portal');
   const [adminTab, setAdminTab] = useState<AdminTab>('dashboard');
@@ -39,7 +39,7 @@ export function App() {
     const unsubscribe = dataService.subscribe(() => setTick(t => t + 1));
 
     const handlePopState = () => {
-      const isAdmin = window.location.search.includes('admin=true') || window.location.pathname.startsWith('/admin');
+      const isAdmin = window.location.search.includes('admin=true') || window.location.pathname.startsWith('Portal/admin');
       setViewMode(isAdmin ? 'admin' : 'portal');
     };
     window.addEventListener('popstate', handlePopState);
