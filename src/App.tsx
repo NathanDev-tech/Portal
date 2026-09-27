@@ -87,7 +87,7 @@ const handlePopState = () => {
       return (
         <AdminLoginPage
           onBack={() => {
-            window.history.pushState({}, '', '/');
+            window.history.pushState({}, '', basePath || '/');
             setViewMode('portal');
           }}
         />
