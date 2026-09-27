@@ -49,10 +49,11 @@ const isAdminRoute = getIsAdminRoute();
     dataService.fetchAll();
     const unsubscribe = dataService.subscribe(() => setTick(t => t + 1));
 
-    const handlePopState = () => {
-      const isAdmin = window.location.search.includes('admin=true') || window.location.pathname.startsWith('Portal/admin');
-      setViewMode(isAdmin ? 'admin' : 'portal');
-    };
+const handlePopState = () => {
+  const isAdmin = getIsAdminRoute();
+  setViewMode(isAdmin ? 'admin' : 'portal');
+};
+
     window.addEventListener('popstate', handlePopState);
 
     return () => {
