@@ -644,19 +644,19 @@ class DataService {
     };
   }
 
-  async fetchAll(): Promise<void> {
-    if (!isSupabaseConfigured) return;
-    await Promise.allSettled([
-      this.fetchMembers(),
-      this.fetchAnnouncements(),
-      this.fetchRehearsals(),
-      this.fetchLiturgies(),
-      this.fetchForms(),
-      this.fetchFormResponses(),
-      this.fetchRegistrations()
-    ]);
-    this.notify();
-  }
+async fetchAll(): Promise<void> {
+  await Promise.allSettled([
+    this.fetchMembers(),
+    this.fetchAnnouncements(),
+    this.fetchRehearsals(),
+    this.fetchLiturgies(),
+    this.fetchForms(),
+    this.fetchFormResponses(),
+    this.fetchRegistrations()
+  ]);
+
+  this.notify();
+}
 }
 
 export const dataService = new DataService();
