@@ -50,11 +50,11 @@ export const PortalRegistration: React.FC = () => {
 
       {/* LANDING BANNER WITH ARCHANGEL ARTWORK */}
       <div className="relative rounded-3xl overflow-hidden shadow-md bg-[#0B192C] text-white p-8 text-center space-y-4">
-        <img
-          src="/hero-archangels.jpg"
-          alt="Bổn Mạng Ca Đoàn Thiên Thần"
-          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
-        />
+       <img
+  src={`${import.meta.env.BASE_URL}hero-archangels.jpg`}
+  alt="Bổn Mạng Ca Đoàn Thiên Thần"
+  className="absolute inset-0 w-full h-full object-cover opacity-40"
+/>
         <div className="relative z-10 space-y-3">
           <div className="w-12 h-12 rounded-full border-2 border-amber-300/80 bg-amber-400/20 backdrop-blur-md text-amber-300 flex items-center justify-center mx-auto shadow-md">
             <UserPlus className="w-6 h-6" />
